@@ -29,6 +29,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.*;
+import java.util.logging.Logger;
 
 /**
  * @author Antonio J. Nebro
@@ -39,6 +40,7 @@ public class MultithreadedEvaluator implements IParallelEvaluator {
   private Problem problem_ ;
   private ExecutorService executor_ ;
   private Collection<Callable<Solution>> taskList_ ;
+  public static final Logger logger_ = Logger.getLogger(MultithreadedEvaluator.class.getName());
 
   /**
    * @author Antonio J. Nebro
@@ -92,7 +94,7 @@ public class MultithreadedEvaluator implements IParallelEvaluator {
    */
   public void startEvaluator(Problem problem) {
     executor_ = Executors.newFixedThreadPool(numberOfThreads_) ;
-    System.out.println("Cores: "+ numberOfThreads_) ;
+    logger_.info("Cores: "+ numberOfThreads_) ;
     taskList_ = null ; 
     problem_ = problem ;
   }

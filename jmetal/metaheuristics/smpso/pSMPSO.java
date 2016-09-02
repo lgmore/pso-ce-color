@@ -314,7 +314,7 @@ public class pSMPSO extends Algorithm {
             if ((i % 6) == 0) {
                 polynomialMutation_.execute(particles_.get(i));
             }
-      //if (i % 3 == 0) { //particles_ mutated with a non-uniform mutation %3
+            //if (i % 3 == 0) { //particles_ mutated with a non-uniform mutation %3
             //  nonUniformMutation_.execute(particles_.get(i));
             //} else if (i % 3 == 1) { //particles_ mutated with a uniform mutation operator
             //  uniformMutation_.execute(particles_.get(i));
@@ -336,6 +336,7 @@ public class pSMPSO extends Algorithm {
         //->Step 1 (and 3) Create the initial population and evaluate
         for (int i = 0; i < swarmSize_; i++) {
             Solution particle = new Solution(problem_);
+            particle.nroParticula_ = i;
             particles_.add(particle);
             parallelEvaluator_.addSolutionForEvaluation(particle);
         }
@@ -381,6 +382,7 @@ public class pSMPSO extends Algorithm {
             mopsoMutation(iteration_, maxIterations_);
 
             for (int i = 0; i < particles_.size(); i++) {
+                logger_.info("nro particula: "+ particles_.get(i).nroParticula_);
                 Solution particle = particles_.get(i);
                 parallelEvaluator_.addSolutionForEvaluation(particle);
             }

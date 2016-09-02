@@ -35,9 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/1280622371/histColor.o \
-	${OBJECTDIR}/_ext/69743266/ejecucion.o \
-	${OBJECTDIR}/_ext/69743266/gpu-basics-similarity.o
+	${OBJECTDIR}/_ext/88668595/histColor.o \
+	${OBJECTDIR}/_ext/979907916/ejecucion.o \
+	${OBJECTDIR}/_ext/979907916/gpu-basics-similarity.o
 
 
 # C Compiler Flags
@@ -54,7 +54,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-Wl,-rpath,/usr/local/include/opencv2 -Wl,-rpath,/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/iqa_1.1.2 `pkg-config --libs opencv`  
+LDLIBSOPTIONS=-Wl,-rpath,/usr/local/include/opencv2 -Wl,-rpath,/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/iqa_1.1.2 `pkg-config --libs opencv`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -64,20 +64,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pso-clahe-color-opencv: ${OBJECTFILES
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pso-clahe-color-opencv ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/_ext/1280622371/histColor.o: /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/OpenCV-Entropy-master/histColor.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1280622371
+${OBJECTDIR}/_ext/88668595/histColor.o: /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/OpenCV-Entropy-master/histColor.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/88668595
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/usr/local/include/opencv2 -I/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/iqa_1.1.2/include `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1280622371/histColor.o /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/OpenCV-Entropy-master/histColor.cpp
+	$(COMPILE.cc) -g -I/usr/local/include/opencv2 -I/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/iqa_1.1.2/include `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/88668595/histColor.o /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/OpenCV-Entropy-master/histColor.cpp
 
-${OBJECTDIR}/_ext/69743266/ejecucion.o: /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/ejecucion.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/69743266
+${OBJECTDIR}/_ext/979907916/ejecucion.o: /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/ejecucion.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/979907916
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/usr/local/include/opencv2 -I/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/iqa_1.1.2/include `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/69743266/ejecucion.o /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/ejecucion.cpp
+	$(COMPILE.cc) -g -I/usr/local/include/opencv2 -I/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/iqa_1.1.2/include `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/979907916/ejecucion.o /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/ejecucion.cpp
 
-${OBJECTDIR}/_ext/69743266/gpu-basics-similarity.o: /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/gpu-basics-similarity.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/69743266
+${OBJECTDIR}/_ext/979907916/gpu-basics-similarity.o: /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/gpu-basics-similarity.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/979907916
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/usr/local/include/opencv2 -I/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/iqa_1.1.2/include `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/69743266/gpu-basics-similarity.o /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/gpu-basics-similarity.cpp
+	$(COMPILE.cc) -g -I/usr/local/include/opencv2 -I/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/iqa_1.1.2/include `pkg-config --cflags opencv`   -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/979907916/gpu-basics-similarity.o /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/gpu-basics-similarity.cpp
 
 # Subprojects
 .build-subprojects:

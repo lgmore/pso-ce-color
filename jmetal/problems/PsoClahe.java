@@ -120,6 +120,7 @@ public class PsoClahe extends Problem {
 //            System.err.println("Need command to run");
 //            System.exit(-1);
 //        }
+            
             DecimalFormat formato = new DecimalFormat("#");
             logger_.info("parametros de entrada: ");
             logger_.info("parametro 1: " + formato.format(solution.getDecisionVariables()[0].getValue()));

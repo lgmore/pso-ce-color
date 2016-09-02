@@ -12,9 +12,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/ejecucion.cpp</itemPath>
-      <itemPath>/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/gpu-basics-similarity.cpp</itemPath>
-      <itemPath>/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/OpenCV-Entropy-master/histColor.cpp</itemPath>
+      <itemPath>/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/ejecucion.cpp</itemPath>
+      <itemPath>/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/gpu-basics-similarity.cpp</itemPath>
+      <itemPath>/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/OpenCV-Entropy-master/histColor.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -40,31 +40,31 @@
         <ccTool>
           <incDir>
             <pElem>/usr/local/include/opencv2</pElem>
-            <pElem>/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/iqa_1.1.2/include</pElem>
+            <pElem>/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/iqa_1.1.2/include</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
           <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pso-clahe-color-opencv</output>
           <linkerDynSerch>
             <pElem>/usr/local/include/opencv2</pElem>
-            <pElem>/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/iqa_1.1.2</pElem>
+            <pElem>/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/iqa_1.1.2</pElem>
           </linkerDynSerch>
           <linkerLibItems>
             <linkerOptionItem>`pkg-config --libs opencv`</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/OpenCV-Entropy-master/histColor.cpp"
+      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/OpenCV-Entropy-master/histColor.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/ejecucion.cpp"
+      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/ejecucion.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/gpu-basics-similarity.cpp"
+      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/gpu-basics-similarity.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -90,17 +90,17 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/OpenCV-Entropy-master/histColor.cpp"
+      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/OpenCV-Entropy-master/histColor.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/ejecucion.cpp"
+      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/ejecucion.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-clahe-color-opencv/gpu-basics-similarity.cpp"
+      <item path="/home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/pso-ce-color.git/pso-clahe-color-opencv/gpu-basics-similarity.cpp"
             ex="false"
             tool="1"
             flavor2="0">

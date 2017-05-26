@@ -19,6 +19,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package jmetal.metaheuristics.smpso;
 
+import java.io.FileInputStream;
 import jmetal.core.Algorithm;
 import jmetal.core.Problem;
 import jmetal.core.SolutionSet;
@@ -33,11 +34,16 @@ import jmetal.util.parallel.IParallelEvaluator;
 import jmetal.util.parallel.MultithreadedEvaluator;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Calendar;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Properties;
 import java.util.logging.FileHandler;
 import jmetal.problems.PsoClahe;
 import org.apache.log4j.Logger;
-
 
 /**
  * This class executes pSMPSO, a multithreaded version of SMPSO, characterized
@@ -47,11 +53,14 @@ public class pSMPSO_main {
 
     public static final Logger logger_ = Logger.getLogger(pSMPSO_main.class.getName());      // Logger object
     public static FileHandler fileHandler_; // FileHandler object
-    
-    static{
-    
+
+    public static Properties prop = new Properties();
+    public static InputStream input = null;
+
+    static {
+
         System.out.println();
-    
+
     }
 
     /**
@@ -78,6 +87,9 @@ public class pSMPSO_main {
         logger_.info("inicia ejecucion");
         fileHandler_ = new FileHandler("SMPSO_main.log");
         //logger_.addHandler(fileHandler_);
+        input = new FileInputStream("pso.properties");
+
+        prop.load(input);
 
         indicators = null;
         if (args.length == 1) {
@@ -91,7 +103,7 @@ public class pSMPSO_main {
         } // if
         else { // Default problem
             problem = new PsoClahe("Real", 3, args[0], args[1]);
-      //problem = new Water("Real");
+            //problem = new Water("Real");
             //problem = new ZDT1("ArrayReal", 1000);
             //problem = new ZDT4("BinaryReal");
             //problem = new WFG1("Real");
@@ -105,9 +117,13 @@ public class pSMPSO_main {
         algorithm = new pSMPSO(problem, parallelEvaluator);
 
         // Algorithm parameters    
-        algorithm.setInputParameter("swarmSize", 100);
-        algorithm.setInputParameter("archiveSize", 100);
-        algorithm.setInputParameter("maxIterations", 100);
+        algorithm.setInputParameter("swarmSize", new Integer(prop.getProperty("swarmSize")));
+        algorithm.setInputParameter("archiveSize", new Integer(prop.getProperty("archiveSize")));
+        algorithm.setInputParameter("maxIterations", new Integer(prop.getProperty("maxIterations")));
+
+        logger_.info("swarmSize: " + new Integer(prop.getProperty("swarmSize")));
+        logger_.info("archiveSize: " + new Integer(prop.getProperty("archiveSize")));
+        logger_.info("maxIterations: " + new Integer(prop.getProperty("maxIterations")));
 
         parameters = new HashMap();
         parameters.put("probability", 1.0 / problem.getNumberOfVariables());
@@ -121,12 +137,20 @@ public class pSMPSO_main {
         SolutionSet population = algorithm.execute();
         long estimatedTime = System.currentTimeMillis() - initTime;
 
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+
+// Get the date today using Calendar object.
+        Date today = Calendar.getInstance().getTime();
+// Using DateFormat format method we can create a string 
+// representation of a date with the defined format.
+        String reportDate = df.format(today);
+
         // Result messages 
         logger_.info("Total execution time: " + estimatedTime + "ms");
         logger_.info("Objectives values have been writen to file FUN");
-        population.printObjectivesToFile("FUN");
+        population.printObjectivesToFile(reportDate + "/FUN" + reportDate+".txt");
         logger_.info("Variables values have been writen to file VAR");
-        population.printVariablesToFile("VAR");
+        population.printVariablesToFile(reportDate + "/VAR" + reportDate+".txt");
 
         if (indicators != null) {
             logger_.info("Quality indicators");

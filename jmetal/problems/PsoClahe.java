@@ -89,9 +89,9 @@ public class PsoClahe extends Problem {
         dimensionesImagen = getDimensionesImagen(pathImagen);
 
         lowerLimit_[0] = 2;
-        upperLimit_[0] = dimensionesImagen.get(0); //valores de r_x
+        upperLimit_[0] = Math.round(dimensionesImagen.get(0)/2); //valores de r_x
         lowerLimit_[1] = 2;
-        upperLimit_[1] = dimensionesImagen.get(1); //valores de r_y
+        upperLimit_[1] = Math.round(dimensionesImagen.get(1)/2); //valores de r_y
         lowerLimit_[2] = 0;
         upperLimit_[2] = 1; //valores de cliplimit
 

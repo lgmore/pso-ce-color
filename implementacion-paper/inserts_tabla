@@ -1,0 +1,3 @@
+psql -h localhost -d pso_clahe_color -U postgres -c \
+    "copy resultados (nombreimagen,vardecision1, vardecision2, vardecision3, objetivo1, objetivo2, objetivo3, objetivo4, nrocorrida, tipocorrida) from STDIN with delimiter as ' '" \
+    < /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/resultados.txt

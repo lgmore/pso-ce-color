@@ -347,7 +347,8 @@ public class Solution implements Serializable {
     public String toString() {
         String aux = "";
         for (int i = 0; i < this.numberOfObjectives_; i++) {
-            aux = aux + this.getObjective(i) + " ";
+            aux = aux + String.format("%.12f", this.getObjective(i)) + " ";
+            //aux = aux + this.getObjective(i) + " ";
         }
 
         return aux;

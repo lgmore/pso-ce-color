@@ -19,6 +19,7 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package jmetal.metaheuristics.smpso;
 
+import java.io.File;
 import java.io.FileInputStream;
 import jmetal.core.Algorithm;
 import jmetal.core.Problem;
@@ -145,12 +146,21 @@ public class pSMPSO_main {
 // representation of a date with the defined format.
         String reportDate = df.format(today);
 
+        File file = new File("corrida" + reportDate);
+        if (!file.exists()) {
+            if (file.mkdir()) {
+                logger_.info("Directory is created!corrida" + reportDate);
+            } else {
+                logger_.info("Failed to create directory!");
+            }
+        }
+
         // Result messages 
         logger_.info("Total execution time: " + estimatedTime + "ms");
         logger_.info("Objectives values have been writen to file FUN");
-        population.printObjectivesToFile(reportDate + "/FUN" + reportDate+".txt");
+        population.printObjectivesToFile("corrida"+reportDate + "/FUN" + reportDate + ".txt");
         logger_.info("Variables values have been writen to file VAR");
-        population.printVariablesToFile(reportDate + "/VAR" + reportDate+".txt");
+        population.printVariablesToFile("corrida"+reportDate + "/VAR" + reportDate + ".txt");
 
         if (indicators != null) {
             logger_.info("Quality indicators");

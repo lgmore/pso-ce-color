@@ -112,8 +112,9 @@ public class pSMPSO_main {
             //problem = new OKA2("Real") ;
         } // else
 
-        int threads = 0; // 0 - use all the available cores
+        int threads = new Integer(prop.getProperty("cantidadHilos")); // 0 - use all the available cores
         IParallelEvaluator parallelEvaluator = new MultithreadedEvaluator(threads);
+        logger_.info("cantidad de hilos: " + new Integer(prop.getProperty("cantidadHilos")));
 
         algorithm = new pSMPSO(problem, parallelEvaluator);
 

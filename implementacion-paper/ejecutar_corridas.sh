@@ -4,3 +4,5 @@ for i in `seq 0 9`; do
   wait
 done
 
+touch termino_bien.txt
+

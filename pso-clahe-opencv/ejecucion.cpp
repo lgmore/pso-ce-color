@@ -73,6 +73,22 @@ int main(int argc, char** argv) {
 
     Mat imagenVuelta;
     cvtColor(ycrcb_merged, imagenVuelta, COLOR_YCrCb2BGR);
+    
+    vector<int> compression_params;
+    compression_params.push_back(CV_IMWRITE_JPEG_QUALITY);
+    compression_params.push_back(100);
+    
+    std::stringstream ss;
+    
+    ss << (1- (8 - entropia))/8 << "_" << 1 - resultados.val[0] << "_" << 1 - resultados.val[1]<< "_" << 1 - resultados.val[2] <<"resultado.jpg"
+
+    try {
+        imwrite(ss.str(), mat, compression_params);
+    }
+    catch (runtime_error& ex) {
+        fprintf(stderr, "Exception converting image to PNG format: %s\n", ex.what());
+        return 1;
+    }
 
 //    namedWindow( "Display frame",CV_WINDOW_AUTOSIZE);
 //    imshow("lena_CLAHE", imagenVuelta);
@@ -81,7 +97,8 @@ int main(int argc, char** argv) {
 
     //8-entropia 1-mssim_b 1-mssim_g 1-mssim_r
     // asumiendo contexto de minimizacion
-    cout << (1- (8 - entropia)/8 * (1 - resultados.val[0])) << endl; //<< " " << 1 - resultados.val[0] << " " << 1 - resultados.val[1] << " "  << 1 - resultados.val[2] << endl; //retorno de prueba de las métricas
+    //cout << (1- (8 - entropia)/8 * (1 - resultados.val[0])) << endl; //<< " " << 1 - resultados.val[0] << " " << 1 - resultados.val[1] << " "  << 1 - resultados.val[2] << endl; //retorno de prueba de las métricas
+    cout << (1- (8 - entropia))/8 << " " << 1 - resultados.val[0] << " " << 1 - resultados.val[1] << " "  << 1 - resultados.val[2] << endl; //retorno de prueba de las métricas
 
     return 0;
 }

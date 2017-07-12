@@ -77,7 +77,7 @@ public class PsoClahe extends Problem {
         this.comandoEjecutar = comandoEjecutar;
         this.pathImagen = pathImagen;
         numberOfVariables_ = nroVariables;
-        numberOfObjectives_ = 4;
+        numberOfObjectives_ = 1;
         numberOfConstraints_ = 0;
         problemName_ = "PsoClahe";
 
@@ -150,9 +150,9 @@ public class PsoClahe extends Problem {
             }
             List<String> items = Arrays.asList(line2.split(" "));
             solution.setObjective(0, Double.valueOf(items.get(0)));
-            solution.setObjective(1, Double.valueOf(items.get(1)));
-            solution.setObjective(2, Double.valueOf(items.get(2)));
-            solution.setObjective(3, Double.valueOf(items.get(3)));
+//            solution.setObjective(1, Double.valueOf(items.get(1)));
+//            solution.setObjective(2, Double.valueOf(items.get(2)));
+//            solution.setObjective(3, Double.valueOf(items.get(3)));
 
         } catch (IOException ex) {
             logger_.error("error: ");

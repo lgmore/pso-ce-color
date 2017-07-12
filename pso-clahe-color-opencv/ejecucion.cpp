@@ -64,6 +64,7 @@ int main(int argc, char** argv) {
     clahe->apply(canales[0], dst);
 
     Mat ycrcb_merged;
+    Scalar resultados = getMSSIM(canales[0], dst);
     dst.copyTo(canales[0]);
 
     hist_y = myEntropy(canales[0], histSize);
@@ -75,7 +76,7 @@ int main(int argc, char** argv) {
     Mat imagenVuelta;
     cvtColor(ycrcb_merged, imagenVuelta, COLOR_YCrCb2BGR);
 
-    Scalar resultados = getMSSIM(imagenOriginal, imagenVuelta);
+    
     //    namedWindow( "Display frame",CV_WINDOW_AUTOSIZE);
     //    imshow("lena_CLAHE", imagenVuelta);
     //
@@ -84,25 +85,25 @@ int main(int argc, char** argv) {
     //8-entropia 1-mssim_b 1-mssim_g 1-mssim_r
     // asumiendo contexto de minimizacion
 
-    std::string nombresalida;
-    std::string arg1=argv[1];
-    nombresalida = arg1 + "_" + argv[2] + "-" + argv[3] + "-" + argv[4]+".jpg";
-    //    url = scheme + hostname;
+//    std::string nombresalida;
+//    std::string arg1=argv[1];
+//    nombresalida = arg1 + "_" + argv[2] + "-" + argv[3] + "-" + argv[4]+".jpg";
+//    //    url = scheme + hostname;
+//
+//    vector<int> compression_params;
+//    compression_params.push_back(CV_IMWRITE_JPEG_QUALITY);
+//    compression_params.push_back(95);
+//
+//    try {
+//        imwrite(nombresalida, imagenVuelta, compression_params);
+//    } catch (runtime_error& ex) {
+//        fprintf(stderr, "Exception converting image to JPG format: %s\n", "ERROR");
+//        return 1;
+//    }
+//
+//    fprintf(stdout, "Saved JPG file.\n");
 
-    vector<int> compression_params;
-    compression_params.push_back(CV_IMWRITE_JPEG_QUALITY);
-    compression_params.push_back(95);
-
-    try {
-        imwrite(nombresalida, imagenVuelta, compression_params);
-    } catch (runtime_error& ex) {
-        fprintf(stderr, "Exception converting image to JPG format: %s\n", "ERROR");
-        return 1;
-    }
-
-    fprintf(stdout, "Saved JPG file.\n");
-
-    cout << 8 - entropia << " " << 1 - resultados.val[0] << " " << 1 - resultados.val[1] << " " << 1 - resultados.val[2] << endl; //retorno de prueba de las métricas
+    cout <<((8 - entropia)/8)*(1 - resultados.val[0])<< endl; //retorno de prueba de las métricas
 
     return 0;
 }

@@ -111,6 +111,7 @@ public class pSMPSO_main {
             //problem = new DTLZ1("Real");
             //problem = new OKA2("Real") ;
         } // else
+        logger_.info("cantidad de hilos: " + (prop.getProperty("cantidadHilos")));
 
         int threads = new Integer(prop.getProperty("cantidadHilos")); // 0 - use all the available cores
         IParallelEvaluator parallelEvaluator = new MultithreadedEvaluator(threads);

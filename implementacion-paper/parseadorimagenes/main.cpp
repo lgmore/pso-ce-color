@@ -49,10 +49,11 @@ int main(int argc, char** argv) {
     }
 
 
-    string a, b, c, d, e, f, g, h;
+    string a, b, c, d, e, f, g, h, i;
     int contador = 0;
-    while (infile >> a >> b >> c >> d >> e >> f >> g >> h) {
+    while (infile >> i >> a >> b >> c >> d >> e >> f >> g >> h) {
         if (h.compare("N")!=0) continue;
+        cout << "se procesa";
         // process pair (a,b)
         Mat imagenYCrCb;
         cv::cvtColor(imagenOriginal, imagenYCrCb, CV_BGR2YCrCb);

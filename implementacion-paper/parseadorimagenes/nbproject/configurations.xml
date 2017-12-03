@@ -38,12 +38,13 @@
         <ccTool>
           <standard>8</standard>
           <incDir>
-            <pElem>/usr/local/include/opencv2</pElem>
+            <pElem>/usr/include/opencv2</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/parseadorimagenes</output>
           <linkerDynSerch>
-            <pElem>/usr/local/include/opencv2</pElem>
+            <pElem>/usr/include/opencv2</pElem>
           </linkerDynSerch>
           <commandlineTool>g++</commandlineTool>
           <linkerLibItems>

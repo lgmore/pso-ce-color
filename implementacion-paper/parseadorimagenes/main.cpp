@@ -10,7 +10,8 @@
 using namespace std;
 
 #include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
+#include <highgui/highgui.hpp>
 #include <iostream>
 #include <cv.h> 
 #include <fstream>
@@ -48,18 +49,19 @@ int main(int argc, char** argv) {
     }
 
 
-    string a, b, c;
+    string a, b, c, d, e, f, g, h;
     int contador = 0;
-    while (infile >> a >> b >> c) {
+    while (infile >> a >> b >> c >> d >> e >> f >> g >> h) {
+        if (h.compare("N")!=0) continue;
         // process pair (a,b)
         Mat imagenYCrCb;
-        cvtColor(imagenOriginal, imagenYCrCb, COLOR_BGR2YCrCb);
+        cv::cvtColor(imagenOriginal, imagenYCrCb, CV_BGR2YCrCb);
 
         Mat canales[3];
         split(imagenYCrCb, canales);
 
 
-        Ptr<CLAHE> clahe = createCLAHE();
+        cv::Ptr<cv::CLAHE> clahe = cv::createCLAHE();
         Size tamanho = Size(stoi(a), stoi(b));
         //    tamanho->width=atoi(argv[2]);
         //    tamanho->height=atoi(argv[3]);
@@ -78,7 +80,7 @@ int main(int argc, char** argv) {
         merge(canales, 3, ycrcb_merged);
 
         Mat imagenVuelta;
-        cvtColor(ycrcb_merged, imagenVuelta, COLOR_YCrCb2BGR);
+        cvtColor(ycrcb_merged, imagenVuelta, CV_YCrCb2BGR);
 
         imwrite("" + std::to_string(contador) + "-resultado.jpg", imagenVuelta);
 

@@ -13,6 +13,8 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
         <gdb_options>
           <DebugOptions>
           </DebugOptions>
@@ -24,7 +26,6 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/vardecision.txt</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/vardecision.txt /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/Low_Contrast_2.jpg</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/Low_Contrast_2.jpg /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/vardecision.txt</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/colorado_1437a1.jpg /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/vardecision.txt</runcommandpicklistitem>
@@ -34,8 +35,9 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" /home/lg_more/MEGAsync/maestria/tesis/pso-clahe-color-mono/standard_test_images/lena_color_512.jpg /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/vardecision.txt</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" /home/lg_more/MEGAsync/maestria/tesis/pso-clahe-color-mono/standard_test_images/lena_color_512_lc.jpg /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/vardecision.txt</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" /home/lg_more/MEGAsync/maestria/tesis/pso-clahe-color-mono/standard_test_images/peppers_color_lc.jpg /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/vardecision.txt</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" calhouse_230.jpg calhouse_230_2.csv</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" /home/lg_more/MEGAsync/maestria/tesis/pso-clahe-color-mono/standard_test_images/peppers_color_lc.jpg /home/lg_more/MEGAsync/maestria/tesis/implementacion-paper/vardecision.txt</runcommand>
+        <runcommand>"${OUTPUT_PATH}" calhouse_230.jpg calhouse_230_2.csv</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

@@ -12,7 +12,7 @@ def nodominados():
 			for idxeval, valeval in enumerate(ventx):
 				esdominado='N'
 				for idx, val in enumerate(ssimr):
-					if (idxeval!=idx):
+					if (idxeval<idx):
 						if 	ssimr[idxeval] >= ssimr[idx] and ssimg[idxeval] >= ssimg[idx] and ssimb[idxeval] >= ssimb[idx] and entropia[idxeval] >= entropia[idx]:
 								esdominado='S'
 								listadominados=np.append(listadominados,esdominado)

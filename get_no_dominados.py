@@ -6,7 +6,7 @@ def nodominados():
 	
 	try:
 		formato = '%s %s %s %s %s %s %s %s'
-		ventx, venty, cliplimit, entropia, ssimr, ssimg, ssimb = np.loadtxt('calhouse_230.csv', delimiter=',', unpack=True)
+		indice, ventx, venty, cliplimit, entropia, ssimr, ssimg, ssimb = np.loadtxt('calhouse_231.csv', delimiter=' ', unpack=True)
 		listadominados=np.array([])
 		with open('calhouse_230'+'_2.csv', 'ab') as abc:
 			for idxeval, valeval in enumerate(ventx):
@@ -18,12 +18,12 @@ def nodominados():
 								listadominados=np.append(listadominados,esdominado)
 								auxiliar=np.column_stack([ventx[idxeval],venty[idxeval],cliplimit[idxeval],entropia[idxeval],ssimr[idxeval],ssimg[idxeval],ssimb[idxeval],esdominado]) 
 								print(auxiliar)
-								np.savetxt(abc, auxiliar ,fmt=formato, delimiter=",")
+								np.savetxt(abc, auxiliar ,fmt=formato, delimiter=" ")
 								break
 				if esdominado=='N':
 					listadominados=np.append(listadominados,esdominado)
 					auxiliar=np.column_stack([ventx[idxeval],venty[idxeval],cliplimit[idxeval],entropia[idxeval],ssimr[idxeval],ssimg[idxeval],ssimb[idxeval],esdominado]) 
-					np.savetxt(abc,auxiliar ,fmt=formato, delimiter=",")
+					np.savetxt(abc,auxiliar ,fmt=formato, delimiter=" ")
 
 		print(listadominados)
 	except Exception:

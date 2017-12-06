@@ -93,7 +93,7 @@ public class PsoClahe extends Problem {
         lowerLimit_[1] = 2;
         upperLimit_[1] = Math.round(dimensionesImagen.get(1)/2); //valores de r_y
         lowerLimit_[2] = 0;
-        upperLimit_[2] = 1; //valores de cliplimit
+        upperLimit_[2] = 256; //valores de cliplimit
 
         if (solutionType.compareTo("BinaryReal") == 0) {
             solutionType_ = new BinaryRealSolutionType(this);
